@@ -1,0 +1,76 @@
+
+    <script>
+
+        class bank{
+    
+            constructor(id,pass,name,balance){
+                this.id = id;
+                this.pass = pass;
+                this.name = name;
+                this.balance = balance;
+            }
+            
+            withdraw(amt){
+    
+               
+                if(this.id == acno && this.pass == acpass){
+                    if(this.balance > amt){
+                        this.balance = this.balance - amt
+                        console.log(`Account Name :- ${this.name}`);
+                        console.log(`Final balance :- ${this.balance}`);
+                    }
+                    else{
+                        console.warn("Your account is blank...");
+                    }
+                   
+                }
+                else{
+                    console.warn("INVALID ACCOUNT NUMBER AND PASSWORD");
+                }
+            }
+    
+            deposite(amt){
+                if(amt > 0){
+                    this.balance = this.balance + amt
+                    console.log(`Account Name :- ${this.name}`);
+                    console.log(`Final balance :- ${this.balance}`);
+                }
+                else{
+                    console.warn(`Minimume 1 rupeee deposite`);
+                }
+    
+                
+            }
+    
+            getdetalis(){
+                console.log(`Account Name :- ${this.name}`);
+                console.log(`Final balance :- ${this.balance}`);
+                console.log(`Account number :- 123456`);
+                console.log(`IFSC code :-1256432`);
+                console.log(`Account holder phone number :- 760020229`);
+            }
+        }
+        
+        let yashVachhani = new bank (123456, "123123", "Yash Vachhani", 1000);
+        let acno = parseInt(prompt("Enter your account number"));
+        let acpass = parseInt(prompt("Enter your account password"));
+        console.log("Prees 1 money withdraw");
+        console.log("Prees 2 money deposite");
+        console.log("Prees 3 money detalis");
+        let ch = parseInt(prompt("Enter your choise...:- "));
+    
+    
+        if(ch == 1){
+            let w = parseInt(prompt("Enter your withdraw amount"));
+            yashVachhani.withdraw(w);
+        }
+        else if(ch == 2){
+            let d = parseInt(prompt("Enter your deposite amount"));
+            yashVachhani.deposite(d);
+        }
+        else if(ch == 3){
+            yashVachhani.getdetalis();
+        }
+    
+    </script>
+  
